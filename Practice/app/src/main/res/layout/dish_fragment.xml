@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Fragments.DishFragment"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/singleDishImage"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_marginTop="90dp"
+    android:src="@drawable/photo_placeholder"
+    android:background="@color/itemBackgroundColor"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"/>
+    <TextView
+        android:id="@+id/singleDishName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:textColor="@color/buttonColor"
+        android:fontFamily="@font/kurale"
+        android:textSize="10pt"
+        android:text="Title"/>
+    <TextView
+        android:id="@+id/singleDishPrice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/fontColor"
+        android:fontFamily="@font/kurale"
+        android:textSize="7pt"
+        android:text="Price"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/borders_img"
+        android:layout_height="200dp">
+        <TextView
+            android:id="@+id/singleDishDescription"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/kurale"
+            android:textColor="@color/fontColor"
+            android:textSize="9pt"/>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/singleDishAddToCartButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:textSize="5pt"
+        android:backgroundTint="@color/buttonColor"
+        android:fontFamily="@font/kurale"
+        android:layout_marginStart="25dp"
+        android:text="Добавить в корзину" />
+</LinearLayout>

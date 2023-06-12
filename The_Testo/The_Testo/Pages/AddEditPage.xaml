@@ -1,0 +1,35 @@
+﻿<Page x:Class="The_Testo.Pages.AddEditPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:The_Testo.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddEditPage">
+
+    <Grid>
+        <Image  HorizontalAlignment="Left" Height="100" Margin="35,45,0,0"  VerticalAlignment="Top" Width="100"/>
+        <StackPanel Width="150" Margin="180,50,0,100" HorizontalAlignment="Left" Orientation="Vertical">
+            <TextBlock FontSize="16"><Run Text="Название"/></TextBlock>
+            <TextBox Width="110" HorizontalAlignment="Left" Background="#6883BA"/>
+            <TextBlock Margin="0,5,0,0" FontSize="16"><Run Text="Цена"/></TextBlock>
+            <TextBox Margin="0,5,0,0" Width="110" HorizontalAlignment="Left" Background="#6883BA"/>
+            <TextBlock Margin="0,5,0,0" FontSize="16"><Run Text="Состав"/></TextBlock>
+            <ListView Margin="0,5,0,0" Height="170" Background="#6883BA">
+                <ListView.ItemTemplate>
+                    <DataTemplate/>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackPanel>
+        <StackPanel Margin="430,50,0,0" HorizontalAlignment="Left" Orientation="Vertical" Width="295">
+            <TextBlock FontSize="16"><Run Text="Рецепт"/></TextBlock>
+            <TextBox TextWrapping="Wrap" Height="140" Background="#6883BA"/>
+            <TextBlock FontSize="16"><Run Text="Описание"/></TextBlock>
+            <TextBox TextWrapping="Wrap" Height="140" Background="#6883BA"/>
+        </StackPanel>
+        <Button x:Name="AcceptButton" Click="AcceptButton_Click" Content="Подтвердить" Width="120" Background="#6883BA" Foreground="White" HorizontalAlignment="Left" Margin="35,420,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="DeclineButton" Click="DeclineButton_Click" Content="Отменить" Width="120" Background="#6883BA" Foreground="White" HorizontalAlignment="Left" Margin="180,420,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

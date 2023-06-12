@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище The_TestoModelContainer" CdmEntityContainer="The_TestoEntities">
+    <EntitySetMapping Name="Availability">
+      <EntityTypeMapping TypeName="The_TestoModel.Availability">
+        <MappingFragment StoreEntitySet="Availability">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="AvailabilityAmount" ColumnName="AvailabilityAmount" />
+          <ScalarProperty Name="AvailabilityPrice" ColumnName="AvailabilityPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category">
+      <EntityTypeMapping TypeName="The_TestoModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Check">
+      <EntityTypeMapping TypeName="The_TestoModel.Check">
+        <MappingFragment StoreEntitySet="Check">
+          <ScalarProperty Name="CheckID" ColumnName="CheckID" />
+          <ScalarProperty Name="CheckStatus" ColumnName="CheckStatus" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compound">
+      <EntityTypeMapping TypeName="The_TestoModel.Compound">
+        <MappingFragment StoreEntitySet="Compound">
+          <ScalarProperty Name="CompID" ColumnName="CompID" />
+          <ScalarProperty Name="TechID" ColumnName="TechID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="DishID" ColumnName="DishID" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dish">
+      <EntityTypeMapping TypeName="The_TestoModel.Dish">
+        <MappingFragment StoreEntitySet="Dish">
+          <ScalarProperty Name="DishID" ColumnName="DishID" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="DishPrice" ColumnName="DishPrice" />
+          <ScalarProperty Name="DishImage" ColumnName="DishImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order">
+      <EntityTypeMapping TypeName="The_TestoModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="OrderTableNum" ColumnName="OrderTableNum" />
+          <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ordered_dishes">
+      <EntityTypeMapping TypeName="The_TestoModel.Ordered_dishes">
+        <MappingFragment StoreEntitySet="Ordered_dishes">
+          <ScalarProperty Name="OrderedDishID" ColumnName="OrderedDishID" />
+          <ScalarProperty Name="CheckID" ColumnName="CheckID" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DishID" ColumnName="DishID" />
+          <ScalarProperty Name="DishAmount" ColumnName="DishAmount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="The_TestoModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="ProductStorage" ColumnName="ProductStorage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TechnologyCard">
+      <EntityTypeMapping TypeName="The_TestoModel.TechnologyCard">
+        <MappingFragment StoreEntitySet="TechnologyCard">
+          <ScalarProperty Name="TechID" ColumnName="TechID" />
+          <ScalarProperty Name="DishID" ColumnName="DishID" />
+          <ScalarProperty Name="DishRecipe" ColumnName="DishRecipe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unit">
+      <EntityTypeMapping TypeName="The_TestoModel.Unit">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Worker">
+      <EntityTypeMapping TypeName="The_TestoModel.Worker">
+        <MappingFragment StoreEntitySet="Worker">
+          <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
+          <ScalarProperty Name="WorkerSurname" ColumnName="WorkerSurname" />
+          <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+          <ScalarProperty Name="WorkerPatr" ColumnName="WorkerPatr" />
+          <ScalarProperty Name="WorkerLogin" ColumnName="WorkerLogin" />
+          <ScalarProperty Name="WorkerPassword" ColumnName="WorkerPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AvailableProducts">
+      <EntityTypeMapping TypeName="The_TestoModel.AvailableProducts">
+        <MappingFragment StoreEntitySet="AvailableProducts">
+          <ScalarProperty Name="Продукт" ColumnName="Продукт" />
+          <ScalarProperty Name="Количество" ColumnName="Количество" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dishes">
+      <EntityTypeMapping TypeName="The_TestoModel.Dishes">
+        <MappingFragment StoreEntitySet="Dishes">
+          <ScalarProperty Name="Наименование" ColumnName="Наименование" />
+          <ScalarProperty Name="Вид_блюда" ColumnName="Вид_блюда" />
+          <ScalarProperty Name="Цена" ColumnName="Цена" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TodaysOrderedDishes">
+      <EntityTypeMapping TypeName="The_TestoModel.TodaysOrderedDishes">
+        <MappingFragment StoreEntitySet="TodaysOrderedDishes">
+          <ScalarProperty Name="DishName" ColumnName="DishName" />
+          <ScalarProperty Name="Сумма" ColumnName="Сумма" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="AddNewDish" FunctionName="Хранилище The_TestoModel.AddNewDish" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,9 @@
+<resources>
+    <style name="Widget.Practice.AppWidget.Container" parent="android:Widget">
+        <item name="android:id">@android:id/background</item>
+    </style>
+
+    <style name="Widget.Practice.AppWidget.InnerView" parent="android:Widget">
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+    </style>
+</resources>

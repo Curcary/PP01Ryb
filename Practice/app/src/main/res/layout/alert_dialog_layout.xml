@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kurale"
+        android:layout_gravity="center"
+        android:text="Ошибка"
+        android:textColor="@color/fontColor"
+        android:textSize="12pt" />
+
+    <TextView
+    android:layout_width="match_parent"
+    android:fontFamily="@font/kurale"
+    android:layout_height="match_parent"
+    android:textAlignment="inherit"
+    android:textSize="9pt"
+    android:layout_margin="25dp"
+    android:textColor="@color/fontColor"
+    android:text="Данные введены неправильно\nПароль должен быть больше 6 символов\nЭл. почта должна иметь правильный формат\nПоля не должны быть пусты"/>
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <ImageView
+        android:id="@+id/checkout_dish_image"
+        android:layout_width="100dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="15dp"
+        android:layout_height="100dp"/>
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/checkout_dish_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kurale"
+            android:textColor="@color/fontColor"
+            android:textSize="12pt"
+            android:text="Title"/>
+        <TextView
+            android:id="@+id/checkout_dish_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kurale"
+            android:textColor="@color/fontColor"
+            android:textSize="8pt"
+            android:text="Price"/>
+        <TextView
+            android:id="@+id/checkout_dish_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/kurale"
+            android:textColor="@color/fontColor"
+            android:textSize="8pt"
+            android:text="Quantity"/>
+    </LinearLayout>
+</LinearLayout>

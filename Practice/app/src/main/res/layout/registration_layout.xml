@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Регистрация"
+        android:fontFamily="@font/kurale"
+        android:textColor="@color/fontColor"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.061" />
+
+    <EditText
+        android:id="@+id/regFirstnameText"
+        android:layout_width="228dp"
+        android:layout_height="37dp"
+        android:backgroundTint="@color/fontColor"
+        android:ems="10"
+        android:fontFamily="@font/kurale"
+        android:hint="Имя"
+        android:inputType="textPersonName"
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.198" />
+
+    <EditText
+        android:id="@+id/regEmailText"
+        android:layout_width="228dp"
+        android:layout_height="38dp"
+        android:backgroundTint="@color/fontColor"
+        android:ems="10"
+        android:fontFamily="@font/kurale"
+        android:hint="E-mail"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.304" />
+
+    <Button
+        android:id="@+id/registrate_button"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/buttonColor"
+        android:fontFamily="@font/kurale"
+        android:text="Регистрация"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/regPasswordText"
+        app:layout_constraintVertical_bias="0.083" />
+
+    <EditText
+        android:id="@+id/regPasswordText"
+        android:layout_width="228dp"
+        android:layout_height="37dp"
+        android:backgroundTint="@color/fontColor"
+        android:ems="10"
+        android:fontFamily="@font/kurale"
+        android:hint="Пароль"
+        android:inputType="textPassword"
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.36" />
+
+    <EditText
+        android:id="@+id/regMiddlenameText"
+        android:layout_width="228dp"
+        android:layout_height="38dp"
+        android:backgroundTint="@color/fontColor"
+        android:ems="10"
+        android:fontFamily="@font/kurale"
+        android:hint="Отчество"
+        android:inputType="textPersonName"
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.249" />
+
+    <EditText
+        android:id="@+id/regLastnameText"
+        android:layout_width="228dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@color/fontColor"
+        android:ems="10"
+        android:fontFamily="@font/kurale"
+        android:hint="Фамилия"
+        android:inputType="textPersonName"
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.144" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

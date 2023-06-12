@@ -1,0 +1,307 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="The_TestoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK__Dish__CategoryID__208CD6FA" FromRole="Category" ToRole="Dish" />
+  </EntityType>
+  <EntityType Name="Compound">
+    <Key>
+      <PropertyRef Name="CompID" />
+    </Key>
+    <Property Name="CompID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TechID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="DishID" Type="Int32" Nullable="false" />
+    <Property Name="Value" Type="Double" Nullable="false" />
+    <Property Name="UnitID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="TechnologyCard" Relationship="Self.FK__Compound__1F98B2C1" FromRole="Compound" ToRole="TechnologyCard" />
+    <NavigationProperty Name="Product" Relationship="Self.FK__Compound__Produc__2180FB33" FromRole="Compound" ToRole="Product" />
+    <NavigationProperty Name="Unit" Relationship="Self.FK__Compound__UnitID__22751F6C" FromRole="Compound" ToRole="Unit" />
+  </EntityType>
+  <EntityType Name="Dish">
+    <Key>
+      <PropertyRef Name="DishID" />
+    </Key>
+    <Property Name="DishID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+    <Property Name="DishName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DishPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="DishImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Dish__CategoryID__208CD6FA" FromRole="Dish" ToRole="Category" />
+    <NavigationProperty Name="Ordered_dishes" Relationship="Self.FK__Ordered_d__DishI__1DB06A4F" FromRole="Dish" ToRole="Ordered_dishes" />
+    <NavigationProperty Name="TechnologyCard" Relationship="Self.FK__Technolog__DishI__1EA48E88" FromRole="Dish" ToRole="TechnologyCard" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="OrderDate" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="OrderTableNum" Type="Int32" />
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="CheckStatus" Type="Boolean" Nullable="false" />
+    <Property Name="OrderIsDelivery" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Order__UserID__236943A5" FromRole="Order" ToRole="User" />
+    <NavigationProperty Name="Ordered_dishes" Relationship="Self.FK__Ordered_dishes__1CBC4616" FromRole="Order" ToRole="Ordered_dishes" />
+  </EntityType>
+  <EntityType Name="Ordered_dishes">
+    <Key>
+      <PropertyRef Name="OrderedDishID" />
+    </Key>
+    <Property Name="OrderedDishID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DishID" Type="Int32" Nullable="false" />
+    <Property Name="DishAmount" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK__Ordered_d__DishI__1DB06A4F" FromRole="Ordered_dishes" ToRole="Dish" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Ordered_dishes__1CBC4616" FromRole="Ordered_dishes" ToRole="Order" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductStorage" Type="Int32" />
+    <NavigationProperty Name="Compound" Relationship="Self.FK__Compound__Produc__2180FB33" FromRole="Product" ToRole="Compound" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoleName" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="User" Relationship="Self.FK__User__RoleID__245D67DE" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="TechnologyCard">
+    <Key>
+      <PropertyRef Name="TechID" />
+      <PropertyRef Name="DishID" />
+    </Key>
+    <Property Name="TechID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DishID" Type="Int32" Nullable="false" />
+    <Property Name="DishRecipe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Compound" Relationship="Self.FK__Compound__1F98B2C1" FromRole="TechnologyCard" ToRole="Compound" />
+    <NavigationProperty Name="Dish" Relationship="Self.FK__Technolog__DishI__1EA48E88" FromRole="TechnologyCard" ToRole="Dish" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UnitName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Compound" Relationship="Self.FK__Compound__UnitID__22751F6C" FromRole="Unit" ToRole="Compound" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserSurname" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="UserName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="UserPatr" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="UserEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoleID" Type="Int16" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="Self.FK__Order__UserID__236943A5" FromRole="User" ToRole="Order" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleID__245D67DE" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="Dishes">
+    <Key>
+      <PropertyRef Name="Наименование" />
+      <PropertyRef Name="Вид_блюда" />
+      <PropertyRef Name="Цена" />
+    </Key>
+    <Property Name="Наименование" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Вид_блюда" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Цена" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TodaysOrderedDishes">
+    <Key>
+      <PropertyRef Name="DishName" />
+    </Key>
+    <Property Name="DishName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Сумма" Type="Int32" />
+  </EntityType>
+  <Association Name="FK__Dish__CategoryID__208CD6FA">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Dish">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compound__1F98B2C1">
+    <End Role="TechnologyCard" Type="Self.TechnologyCard" Multiplicity="1" />
+    <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechnologyCard">
+        <PropertyRef Name="TechID" />
+        <PropertyRef Name="DishID" />
+      </Principal>
+      <Dependent Role="Compound">
+        <PropertyRef Name="TechID" />
+        <PropertyRef Name="DishID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compound__Produc__2180FB33">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Compound">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compound__UnitID__22751F6C">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="Compound">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordered_d__DishI__1DB06A4F">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="Ordered_dishes" Type="Self.Ordered_dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="DishID" />
+      </Principal>
+      <Dependent Role="Ordered_dishes">
+        <PropertyRef Name="DishID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Technolog__DishI__1EA48E88">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="TechnologyCard" Type="Self.TechnologyCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="DishID" />
+      </Principal>
+      <Dependent Role="TechnologyCard">
+        <PropertyRef Name="DishID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__UserID__236943A5">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordered_dishes__1CBC4616">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Ordered_dishes" Type="Self.Ordered_dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
+        <PropertyRef Name="OrderDate" />
+      </Principal>
+      <Dependent Role="Ordered_dishes">
+        <PropertyRef Name="OrderID" />
+        <PropertyRef Name="OrderDate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleID__245D67DE">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="The_TestoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Compound" EntityType="Self.Compound" />
+    <EntitySet Name="Dish" EntityType="Self.Dish" />
+    <EntitySet Name="Order" EntityType="Self.Order" />
+    <EntitySet Name="Ordered_dishes" EntityType="Self.Ordered_dishes" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="Role" EntityType="Self.Role" />
+    <EntitySet Name="TechnologyCard" EntityType="Self.TechnologyCard" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" />
+    <EntitySet Name="User" EntityType="Self.User" />
+    <EntitySet Name="Dishes" EntityType="Self.Dishes" />
+    <EntitySet Name="TodaysOrderedDishes" EntityType="Self.TodaysOrderedDishes" />
+    <AssociationSet Name="FK__Dish__CategoryID__208CD6FA" Association="Self.FK__Dish__CategoryID__208CD6FA">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Dish" EntitySet="Dish" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compound__1F98B2C1" Association="Self.FK__Compound__1F98B2C1">
+      <End Role="TechnologyCard" EntitySet="TechnologyCard" />
+      <End Role="Compound" EntitySet="Compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compound__Produc__2180FB33" Association="Self.FK__Compound__Produc__2180FB33">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Compound" EntitySet="Compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compound__UnitID__22751F6C" Association="Self.FK__Compound__UnitID__22751F6C">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Compound" EntitySet="Compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordered_d__DishI__1DB06A4F" Association="Self.FK__Ordered_d__DishI__1DB06A4F">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="Ordered_dishes" EntitySet="Ordered_dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Technolog__DishI__1EA48E88" Association="Self.FK__Technolog__DishI__1EA48E88">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="TechnologyCard" EntitySet="TechnologyCard" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__UserID__236943A5" Association="Self.FK__Order__UserID__236943A5">
+      <End Role="User" EntitySet="User" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordered_dishes__1CBC4616" Association="Self.FK__Ordered_dishes__1CBC4616">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Ordered_dishes" EntitySet="Ordered_dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleID__245D67DE" Association="Self.FK__User__RoleID__245D67DE">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <FunctionImport Name="AddNewDish">
+      <Parameter Name="Caregory" Mode="In" Type="Int32" />
+      <Parameter Name="DishName" Mode="In" Type="String" />
+      <Parameter Name="DishPrice" Mode="In" Type="Decimal" />
+      <Parameter Name="DishImage" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="DaySummary">
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+      <Parameter Name="OutMoney" Mode="InOut" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="OrderSum">
+      <Parameter Name="OrderID" Mode="In" Type="Int32" />
+      <Parameter Name="OutSum" Mode="InOut" Type="Decimal" />
+    </FunctionImport>
+  </EntityContainer>
+</Schema>

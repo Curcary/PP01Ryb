@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="BackgroundColor">#F8F9FB</color>
+    <color name="ToolbarBackgroundColor">#6883BA</color>
+    <color name="itemBackgroundColor">#E1ECF7</color>
+    <color name="fontColor">#426B98</color>
+    <color name="buttonColor">#71A5DE</color>
+    <color name="dividerColor">#9DBCFB</color>
+</resources>

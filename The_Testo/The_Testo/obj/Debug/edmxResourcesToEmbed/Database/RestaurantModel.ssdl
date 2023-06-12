@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище The_TestoModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Availability">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="AvailabilityAmount" Type="int" Nullable="false" />
+    <Property Name="AvailabilityPrice" Type="money" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="nchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Check">
+    <Key>
+      <PropertyRef Name="CheckID" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="OrderDate" />
+    </Key>
+    <Property Name="CheckID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckStatus" Type="bit" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Compound">
+    <Key>
+      <PropertyRef Name="CompID" />
+    </Key>
+    <Property Name="CompID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TechID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="DishID" Type="int" Nullable="false" />
+    <Property Name="Value" Type="float" Nullable="false" />
+    <Property Name="UnitID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Dish">
+    <Key>
+      <PropertyRef Name="DishID" />
+    </Key>
+    <Property Name="DishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+    <Property Name="DishName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="DishPrice" Type="money" Nullable="false" />
+    <Property Name="DishImage" Type="image" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="OrderDate" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="OrderTableNum" Type="int" />
+    <Property Name="WorkerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ordered_dishes">
+    <Key>
+      <PropertyRef Name="OrderedDishID" />
+    </Key>
+    <Property Name="OrderedDishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckID" Type="int" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="DishID" Type="int" Nullable="false" />
+    <Property Name="DishAmount" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="ProductStorage" Type="int" />
+  </EntityType>
+  <EntityType Name="TechnologyCard">
+    <Key>
+      <PropertyRef Name="TechID" />
+      <PropertyRef Name="DishID" />
+    </Key>
+    <Property Name="TechID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DishID" Type="int" Nullable="false" />
+    <Property Name="DishRecipe" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitID" />
+    </Key>
+    <Property Name="UnitID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UnitName" Type="nchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Worker">
+    <Key>
+      <PropertyRef Name="WorkerID" />
+    </Key>
+    <Property Name="WorkerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="WorkerSurname" Type="nchar" MaxLength="15" />
+    <Property Name="WorkerName" Type="nchar" MaxLength="15" />
+    <Property Name="WorkerPatr" Type="nchar" MaxLength="15" />
+    <Property Name="WorkerLogin" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="WorkerPassword" Type="nchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "The_Testo.dbo.AvailableProducts" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="AvailableProducts">
+    <Key>
+      <PropertyRef Name="Продукт" />
+      <PropertyRef Name="Количество" />
+    </Key>
+    <Property Name="Продукт" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Количество" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "The_Testo.dbo.Dishes" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="Dishes">
+    <Key>
+      <PropertyRef Name="Наименование" />
+      <PropertyRef Name="Вид_блюда" />
+      <PropertyRef Name="Цена" />
+    </Key>
+    <Property Name="Наименование" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Вид_блюда" Type="nchar" MaxLength="30" Nullable="false" />
+    <Property Name="Цена" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "The_Testo.dbo.TodaysOrderedDishes" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+  <EntityType Name="TodaysOrderedDishes">
+    <Key>
+      <PropertyRef Name="DishName" />
+    </Key>
+    <Property Name="DishName" Type="nchar" MaxLength="20" Nullable="false" />
+    <Property Name="Сумма" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "The_Testo.dbo.Workers" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Workers">
+          <Property Name="Фамилия" Type="nchar" MaxLength="15" />
+          <Property Name="Имя" Type="nchar" MaxLength="15" />
+          <Property Name="Отчество" Type="nchar" MaxLength="15" />
+        </EntityType>-->
+  <Association Name="FK__Availabil__Produ__46E78A0C">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Availability" Type="Self.Availability" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Availability">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Check__403A8C7D">
+    <End Role="Order" Type="Self.Order" Multiplicity="1" />
+    <End Role="Check" Type="Self.Check" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Order">
+        <PropertyRef Name="OrderID" />
+        <PropertyRef Name="OrderDate" />
+      </Principal>
+      <Dependent Role="Check">
+        <PropertyRef Name="OrderID" />
+        <PropertyRef Name="OrderDate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compound__440B1D61">
+    <End Role="TechnologyCard" Type="Self.TechnologyCard" Multiplicity="1" />
+    <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TechnologyCard">
+        <PropertyRef Name="TechID" />
+        <PropertyRef Name="DishID" />
+      </Principal>
+      <Dependent Role="Compound">
+        <PropertyRef Name="TechID" />
+        <PropertyRef Name="DishID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compound__Produc__45F365D3">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Compound">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Compound__UnitID__47DBAE45">
+    <End Role="Unit" Type="Self.Unit" Multiplicity="1" />
+    <End Role="Compound" Type="Self.Compound" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Unit">
+        <PropertyRef Name="UnitID" />
+      </Principal>
+      <Dependent Role="Compound">
+        <PropertyRef Name="UnitID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dish__CategoryID__44FF419A">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="Dish">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Order__WorkerID__48CFD27E">
+    <End Role="Worker" Type="Self.Worker" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Worker">
+        <PropertyRef Name="WorkerID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="WorkerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordered_d__DishI__4222D4EF">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="Ordered_dishes" Type="Self.Ordered_dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="DishID" />
+      </Principal>
+      <Dependent Role="Ordered_dishes">
+        <PropertyRef Name="DishID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ordered_dishes__412EB0B6">
+    <End Role="Check" Type="Self.Check" Multiplicity="1" />
+    <End Role="Ordered_dishes" Type="Self.Ordered_dishes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Check">
+        <PropertyRef Name="CheckID" />
+        <PropertyRef Name="OrderID" />
+        <PropertyRef Name="OrderDate" />
+      </Principal>
+      <Dependent Role="Ordered_dishes">
+        <PropertyRef Name="CheckID" />
+        <PropertyRef Name="OrderID" />
+        <PropertyRef Name="OrderDate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Technolog__DishI__4316F928">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="TechnologyCard" Type="Self.TechnologyCard" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="DishID" />
+      </Principal>
+      <Dependent Role="TechnologyCard">
+        <PropertyRef Name="DishID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="AddNewDish" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Caregory" Type="int" Mode="In" />
+    <Parameter Name="DishName" Type="nchar" Mode="In" />
+    <Parameter Name="DishPrice" Type="money" Mode="In" />
+    <Parameter Name="DishImage" Type="image" Mode="In" />
+  </Function>
+  <Function Name="DaySummary" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Date" Type="datetime" Mode="In" />
+    <Parameter Name="OutMoney" Type="money" Mode="InOut" />
+  </Function>
+  <Function Name="OrderSum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderID" Type="int" Mode="In" />
+    <Parameter Name="OutSum" Type="money" Mode="In" />
+  </Function>
+  <EntityContainer Name="Хранилище The_TestoModelContainer">
+    <EntitySet Name="Availability" EntityType="Self.Availability" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Check" EntityType="Self.Check" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Compound" EntityType="Self.Compound" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ordered_dishes" EntityType="Self.Ordered_dishes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TechnologyCard" EntityType="Self.TechnologyCard" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Worker" EntityType="Self.Worker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AvailableProducts" EntityType="Self.AvailableProducts" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AvailableProducts].[Продукт] AS [Продукт], 
+    [AvailableProducts].[Количество] AS [Количество]
+    FROM [dbo].[AvailableProducts] AS [AvailableProducts]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Dishes" EntityType="Self.Dishes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Dishes].[Наименование] AS [Наименование], 
+    [Dishes].[Вид_блюда] AS [Вид_блюда], 
+    [Dishes].[Цена] AS [Цена]
+    FROM [dbo].[Dishes] AS [Dishes]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="TodaysOrderedDishes" EntityType="Self.TodaysOrderedDishes" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [TodaysOrderedDishes].[DishName] AS [DishName], 
+    [TodaysOrderedDishes].[Сумма] AS [Сумма]
+    FROM [dbo].[TodaysOrderedDishes] AS [TodaysOrderedDishes]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Availabil__Produ__46E78A0C" Association="Self.FK__Availabil__Produ__46E78A0C">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Availability" EntitySet="Availability" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Check__403A8C7D" Association="Self.FK__Check__403A8C7D">
+      <End Role="Order" EntitySet="Order" />
+      <End Role="Check" EntitySet="Check" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compound__440B1D61" Association="Self.FK__Compound__440B1D61">
+      <End Role="TechnologyCard" EntitySet="TechnologyCard" />
+      <End Role="Compound" EntitySet="Compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compound__Produc__45F365D3" Association="Self.FK__Compound__Produc__45F365D3">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Compound" EntitySet="Compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Compound__UnitID__47DBAE45" Association="Self.FK__Compound__UnitID__47DBAE45">
+      <End Role="Unit" EntitySet="Unit" />
+      <End Role="Compound" EntitySet="Compound" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dish__CategoryID__44FF419A" Association="Self.FK__Dish__CategoryID__44FF419A">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Dish" EntitySet="Dish" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Order__WorkerID__48CFD27E" Association="Self.FK__Order__WorkerID__48CFD27E">
+      <End Role="Worker" EntitySet="Worker" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordered_d__DishI__4222D4EF" Association="Self.FK__Ordered_d__DishI__4222D4EF">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="Ordered_dishes" EntitySet="Ordered_dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ordered_dishes__412EB0B6" Association="Self.FK__Ordered_dishes__412EB0B6">
+      <End Role="Check" EntitySet="Check" />
+      <End Role="Ordered_dishes" EntitySet="Ordered_dishes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Technolog__DishI__4316F928" Association="Self.FK__Technolog__DishI__4316F928">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="TechnologyCard" EntitySet="TechnologyCard" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

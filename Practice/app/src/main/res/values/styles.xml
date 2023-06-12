@@ -1,0 +1,8 @@
+<resources>
+    <style name="Style_TextView" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="fontFamily">@font/kurale</item>
+        <item name="android:textSize">10pt</item>
+        <item name="android:divider">@color/dividerColor</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+</resources>

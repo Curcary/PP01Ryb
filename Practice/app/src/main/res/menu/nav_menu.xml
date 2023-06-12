@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+    <group>
+        <item android:title="Меню" android:id="@+id/nav_dishes"/>
+        <item android:title="Заказы" android:id="@+id/nav_orders"/>
+        <item android:title="Корзина" android:id="@+id/nav_cart"/>
+        <item android:title="Профиль" android:id="@+id/nav_profile"/>
+        <item android:title="Контакты" android:id="@+id/nav_contacts"/>
+        <item android:title="О приложении" android:id="@+id/nav_about"/>
+        <item android:title="Выйти из профиля" android:id="@+id/nav_logout"/>
+    </group>
+
+
+</menu>

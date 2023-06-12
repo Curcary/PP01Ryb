@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+<ImageView
+    android:id="@+id/ordered_dish_image"
+    android:layout_width="70dp"
+    android:layout_margin="5dp"
+    android:src="@drawable/photo_placeholder2"
+    android:layout_height="70dp"/>
+    <TextView
+        android:id="@+id/ordered_dish_price"
+        android:layout_width="70dp"
+        android:text="text"
+        android:textSize="6pt"
+        android:fontFamily="@font/kurale"
+        android:textAlignment="center"
+        android:layout_margin="5dp"
+        android:textColor="@color/fontColor"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/cartdishImageView"
+        android:layout_width="100dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/photo_placeholder2" />
+
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/cartdishTextView"
+            android:layout_width="256dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="18dp"
+            android:fontFamily="@font/kurale"
+            android:text="Title"
+            android:textAlignment="textStart"
+            android:textColor="@color/fontColor"
+            android:textSize="10pt" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp">
+
+            <Button
+                android:id="@+id/plusButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:foreground="@drawable/plus_button" />
+
+            <TextView
+                android:id="@+id/quantityTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:fontFamily="@font/kurale"
+                android:text="Quantity"
+                android:textColor="@color/fontColor" />
+
+            <Button
+                android:id="@+id/minusButton"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:foreground="@drawable/minus_button"
+                 />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/cartdishPriceTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/kurale"
+            android:text="Price"
+            android:textAlignment="center"
+            android:textColor="@color/fontColor" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/deleteDishButton"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/buttonColor"
+        android:fontFamily="@font/kurale"
+        android:text="Удалить"/>
+</LinearLayout>

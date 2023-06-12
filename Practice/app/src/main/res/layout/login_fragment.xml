@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/authLoginText"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/fontColor"
+        android:ems="10"
+        android:fontFamily="@font/kurale"
+        android:hint="Логин"
+        android:inputType="textPersonName"
+        android:text=""
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.281" />
+
+    <EditText
+        android:id="@+id/authPasswordText"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:textSize="12dp"
+        android:fontFamily="@font/kurale"
+        android:hint="Пароль"
+        android:backgroundTint="@color/fontColor"
+        android:inputType="textPassword"
+        android:textColor="@color/fontColor"
+        android:textColorHint="@color/fontColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/authLoginText"
+        app:layout_constraintVertical_bias="0.041" />
+
+    <CheckBox
+        android:id="@+id/rememberMeSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Запомнить меня"
+        android:checked="true"
+        android:fontFamily="@font/kurale"
+        android:buttonTint="@color/buttonColor"
+        android:textColor="@color/fontColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.392"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/authPasswordText"
+        app:layout_constraintVertical_bias="0.016" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/buttonColor"
+        android:fontFamily="@font/kurale"
+        android:text="Войти"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rememberMeSwitch"
+        app:layout_constraintVertical_bias="0.11" />
+
+    <Button
+        android:id="@+id/registrationButton"
+        android:layout_width="130dp"
+        android:layout_height="40dp"
+        android:backgroundTint="@color/buttonColor"
+        android:onClick="registrationOnClick"
+        android:text="Регистрация"
+        android:fontFamily="@font/kurale"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.867"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rememberMeSwitch"
+        app:layout_constraintVertical_bias="0.107" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Авторизация"
+        android:textColor="@color/fontColor"
+        android:textSize="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/authLoginText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.674"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

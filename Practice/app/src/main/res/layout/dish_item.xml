@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+android:layout_margin="50dp"
+    android:background="@drawable/rounded_layout"
+    android:orientation="vertical"
+    android:padding="5dp"
+    android:gravity="center">
+<ImageView
+    android:id="@+id/dishImage"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    android:layout_margin="5dp"
+    android:src="@drawable/photo_placeholder"/>
+    <TextView
+        android:id="@+id/dishNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place"
+        android:textAlignment="center"
+        android:fontFamily="@font/kurale"
+        android:layout_gravity="center"
+        android:textColor="@color/fontColor"
+        android:textSize="12pt"/>
+    <TextView
+        android:id="@+id/dishPriceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Place"
+        android:fontFamily="@font/kurale"
+        android:layout_marginLeft="12dp"
+        android:textSize="9pt"
+        android:layout_gravity="left"
+        android:textColor="@color/fontColor"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/kurale"
+        android:id="@+id/toCartButton"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/buttonColor"
+        android:text="В корзину" />
+</LinearLayout>

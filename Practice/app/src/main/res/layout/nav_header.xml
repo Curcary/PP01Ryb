@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:layout_margin="15dp"
+
+    android:background="@color/ToolbarBackgroundColor">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kurale"
+        android:text="The Testo"
+        android:textColor="#FFFFFF"
+        android:textSize="18pt" />
+<LinearLayout
+    android:id="@+id/nav_login_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:clickable="true"
+    tools:ignore="InvalidId">
+
+
+
+    <TextView
+        android:id="@+id/profile_nav_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/kurale"
+        android:text="Вход"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="13dp"
+        android:textColor="#FFFFFF"
+        android:textSize="12pt" />
+</LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5px"
+        android:background="#FFFFFF"/>
+</LinearLayout>
